@@ -1,0 +1,90 @@
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins
+" List ends here. Plugins become visible to Vim after this call.
+
+" Themes
+Plug 'arcticicestudio/nord-vim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'fxn/vim-monochrome'
+
+" Finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Snippets
+Plug 'sheerun/vim-polyglot'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'https://github.com/honza/vim-snippets'
+
+" Autocomplete
+Plug 'ervandew/supertab'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mattn/emmet-vim'
+
+" Other
+Plug 'preservim/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug '907th/vim-auto-save'
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+
+" Theme settings for tmux
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set background=dark
+
+if (empty($TMUX))
+	if (has("nvim"))
+		let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+	endif
+	if (has("termguicolors"))
+		set termguicolors
+	endif
+endif
+
+"Set syntax highlighter"
+colorscheme minochrome
+
+" Windows Splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" No Arrow Keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+" Fuzzy Map Key
+nnoremap <silent> <C-p> :Files<cr>
+nnoremap <silent> <C-g> :GFiles<cr>
+nnoremap <C-f> :Rg!
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+" Replace command
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" Emmet Key Binding
+let g:user_emmet_leader_key=','
+
+" Build Commands
+nnoremap <C-b> <Esc>:w<CR>:!clear;python3 %<CR>
+nnoremap <C-t> <Esc>:w<CR>:!clear;pipenv run pytest -v<CR>
+
+" VIM Settings
+set rtp+=/usr/local/opt/fzf
+
+set number
+set relativenumber
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4
+set backspace=indent,eol,start
+
+let g:auto_save = 1
