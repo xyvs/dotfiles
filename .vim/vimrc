@@ -11,6 +11,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug '907th/vim-auto-save'
+Plug 'szw/vim-maximizer'
 
 " telescope
 Plug 'nvim-lua/popup.nvim'
@@ -79,6 +80,9 @@ nmap <Leader>dv <Plug>VimspectorToggleBreakpoint
 
 " replace command
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" maximize pane
+nnoremap <leader>m :MaximizerToggle<CR>
 
 " emmet key binding
 let g:user_emmet_leader_key=','
