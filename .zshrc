@@ -71,7 +71,18 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# Append a command directly
+
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
+
+plugins=(
+    zsh-autosuggestions
+    git
+    sudo
+    dirhistory
+    osx
+    k
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,11 +112,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias v="nvim"
+
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
+# fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# nvm config
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# enhancd
+export ENHANCD_DISABLE_DOT=1
+export ENHANCD_DISABLE_HOME=1
+export ENHANCD_HYPHEN_ARG=1
+source ~/.enhancd/init.sh

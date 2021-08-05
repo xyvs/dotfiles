@@ -9,7 +9,7 @@ alt - tab : yabai -m display --focus next || yabai -m display --focus first
 cmd - o : yabai -m space --create && \
           index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
           yabai -m space --focus "${index}"
-cmd - p : yabai -m space --destroy
+# cmd - p : yabai -m space --destroy # Doesn't work
 
 # switch spaces
 cmd - 1 : yabai -m space --focus 1
@@ -59,7 +59,7 @@ cmd + shift - 4 : yabai -m window --space 4
 cmd + shift - 5 : yabai -m window --space 5
 
 # toggle full screen windows
-cmd - f : yabai -m window --toggle zoom-fullscreen
+cmd - s : yabai -m window --toggle zoom-fullscreen
 
 # toogle floating windows
 cmd - d : yabai -m window --toggle float
