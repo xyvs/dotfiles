@@ -79,9 +79,6 @@ plugins=(
     zsh-autosuggestions
     git
     sudo
-    dirhistory
-    osx
-    k
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -124,9 +121,3 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 # nvm config
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# enhancd
-export ENHANCD_DISABLE_DOT=1
-export ENHANCD_DISABLE_HOME=1
-export ENHANCD_HYPHEN_ARG=1
-source ~/.enhancd/init.sh
