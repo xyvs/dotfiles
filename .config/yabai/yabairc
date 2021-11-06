@@ -60,5 +60,6 @@ yabai -m rule --add app="^IINA$" manage=off
 yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^LastPass$" manage=off
 yabai -m rule --add app="^Calendar$" manage=off
+yabai -m rule --add app="^Finder / Copy$" manage=on
 
 echo "yabai configuration loaded.."
