@@ -3,9 +3,11 @@ call plug#begin('~/.vim/plugged')
 " themes
 Plug 'fxn/vim-monochrome'
 Plug 'dylanaraps/wal.vim'
+Plug 'arcticicestudio/nord-vim'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mattn/emmet-vim'
 
 " other
 Plug 'preservim/nerdcommenter'
@@ -28,6 +30,10 @@ call plug#end()
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" Emmet auto complete
+let g:user_emmet_leader_key=','
+
 
 if (empty($TMUX))
 	if (has("nvim"))
@@ -88,7 +94,7 @@ nnoremap <leader>m :MaximizerToggle<CR>
 let g:user_emmet_leader_key=','
 
 " build commands
-nnoremap <C-b> <Esc>:w<CR>:!clear;python3 %<CR>
+nnoremap <C-b> <Esc>:w<CR>:!clear;python windmill.py /tests/ui/participant/suite_b/test_participant_1028_investment_election_beta.py<CR>
 nnoremap <C-t> <Esc>:w<CR>:!clear;pipenv run pytest -v<CR>
 
 " vim settings
@@ -101,4 +107,5 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4
 set backspace=indent,eol,start
 
 let g:auto_save = 1
+let g:loaded_matchparen=1
 
