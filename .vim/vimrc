@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'fxn/vim-monochrome'
 Plug 'dylanaraps/wal.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'lurst/austere.vim'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -14,6 +15,10 @@ Plug 'preservim/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug '907th/vim-auto-save'
 Plug 'szw/vim-maximizer'
+
+" Plugins
+Plug 'leafOfTree/vim-vue-plugin'
+
 
 " telescope
 Plug 'nvim-lua/popup.nvim'
@@ -46,6 +51,7 @@ endif
 
 set background=dark
 colorscheme minochrome
+colorscheme austere
 
 " new leader key
 nnoremap <SPACE> <Nop>
