@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-git_files themes
 Plug 'fxn/vim-monochrome'
 Plug 'dylanaraps/wal.vim'
 Plug 'arcticicestudio/nord-vim'
