@@ -19,7 +19,6 @@ Plug 'szw/vim-maximizer'
 " Plugins
 Plug 'leafOfTree/vim-vue-plugin'
 
-
 " telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -71,7 +70,7 @@ noremap <Right> <Nop>
 
 " telescope essentials
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fd <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>ft <cmd>Telescope<cr>
 
