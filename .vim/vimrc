@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-" themes
+git_files themes
 Plug 'fxn/vim-monochrome'
 Plug 'dylanaraps/wal.vim'
 Plug 'arcticicestudio/nord-vim'
@@ -49,8 +49,8 @@ if (empty($TMUX))
 endif
 
 set background=dark
-colorscheme minochrome
 colorscheme austere
+colorscheme nord
 
 " new leader key
 nnoremap <SPACE> <Nop>
@@ -69,7 +69,7 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 " telescope essentials
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope git_files<cr>
 nnoremap <leader>fd <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>ft <cmd>Telescope<cr>
