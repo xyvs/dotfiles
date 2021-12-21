@@ -7,6 +7,7 @@ Plug 'lurst/austere.vim'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'github/copilot.vim'
 Plug 'mattn/emmet-vim'
 
 " other
