@@ -96,8 +96,8 @@ nnoremap <leader>m :MaximizerToggle<CR>
 let g:user_emmet_leader_key=','
 
 " build commands
-nnoremap <C-b> <Esc>:w<CR>:!clear;python3 %<CR>
-nnoremap <C-t> <Esc>:w<CR>:!clear;pipenv run pytest -v<CR>
+nnoremap <C-b> <Esc>:w<CR>:!clear;poetry run %<CR>
+nnoremap <C-t> <Esc>:w<CR>:!clear;poetry run pytest -v<CR>
 
 " vim settings
 set number
