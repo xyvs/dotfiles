@@ -1,14 +1,12 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'fxn/vim-monochrome'
-Plug 'dylanaraps/wal.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'lurst/austere.vim'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'github/copilot.vim'
 Plug 'mattn/emmet-vim'
+Plug 'github/copilot.vim'
 
 " other
 Plug 'preservim/nerdcommenter'
@@ -49,7 +47,6 @@ if (empty($TMUX))
 endif
 
 set background=dark
-colorscheme austere
 colorscheme nord
 
 " new leader key
@@ -99,7 +96,7 @@ nnoremap <leader>m :MaximizerToggle<CR>
 let g:user_emmet_leader_key=','
 
 " build commands
-nnoremap <C-b> <Esc>:w<CR>:!clear;python windmill.py /tests/ui/participant/suite_b/test_participant_1028_investment_election_beta.py<CR>
+nnoremap <C-b> <Esc>:w<CR>:!clear;python3 %<CR>
 nnoremap <C-t> <Esc>:w<CR>:!clear;pipenv run pytest -v<CR>
 
 " vim settings
