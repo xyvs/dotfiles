@@ -65,5 +65,5 @@ cmd - s : yabai -m window --toggle zoom-fullscreen
 cmd - d : yabai -m window --toggle float
 
 # open new terminal
-cmd - return : osascript -e 'tell application "iterm" to activate' -e 'tell application "system events" to tell process "iterm" to keystroke "n" using command down'
+cmd - return : osascript -e 'tell application "kitty" to activate' -e 'tell application "system events" to tell process "kitty" to keystroke "n" using command down'
 

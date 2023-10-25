@@ -2,6 +2,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'fxn/vim-monochrome'
 Plug 'arcticicestudio/nord-vim'
+Plug 'owickstrom/vim-colors-paramount'
+
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -13,6 +15,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug '907th/vim-auto-save'
 Plug 'szw/vim-maximizer'
+Plug 'folke/zen-mode.nvim'
 
 " Plugins
 Plug 'leafOfTree/vim-vue-plugin'
@@ -24,7 +27,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 
 " debugging
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 
 call plug#end()
 
@@ -47,7 +50,7 @@ if (empty($TMUX))
 endif
 
 set background=dark
-colorscheme nord
+colorscheme monochrome
 
 " new leader key
 nnoremap <SPACE> <Nop>
@@ -91,6 +94,9 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " maximize pane
 nnoremap <leader>m :MaximizerToggle<CR>
+
+" enter zen mode
+nnoremap <leader>z :ZenMode<CR>
 
 " emmet key binding
 let g:user_emmet_leader_key=','
